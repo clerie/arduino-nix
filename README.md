@@ -59,7 +59,7 @@ From the indexes you create overlays which then make the Arduino packages and li
         };
 
         # arduinoEnv provides bin/arduino-cli and some useful helpers functions
-        arduinoEnv = pkgs.makeArduinoEnv {
+        arduinoEnv = pkgs.mkArduinoEnv {
           libraries = with pkgs.arduinoLibraries; [
             (arduino-nix.latestVersion ADS1X15)
             (arduino-nix.latestVersion Ethernet_Generic)
@@ -74,7 +74,7 @@ From the indexes you create overlays which then make the Arduino packages and li
           ];
         };
 
-        arduinoEnvESP32 = pkgs.makeArduinoEnv {
+        arduinoEnvESP32 = pkgs.mkArduinoEnv {
           packages = with pkgs.arduinoPackages; [
             platforms.esp32.esp32."2.0.14"
           ];
