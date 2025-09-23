@@ -26,7 +26,7 @@ let
               cp -R * "$out/$dirName/"
             '';
             nativeBuildInputs = [ pkgs.unzip ];
-            src = fetchurl ({
+            src = pkgs.fetchurl ({
               url = system.url;
             } // (convertHash system.checksum));
           };
@@ -58,7 +58,7 @@ let
           runHook postInstall
         '';
         nativeBuildInputs = [ pkgs.unzip ];
-        src = fetchurl ({
+        src = pkgs.fetchurl ({
           url = url;
         } // (convertHash checksum));
       };

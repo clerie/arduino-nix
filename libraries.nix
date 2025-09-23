@@ -19,7 +19,7 @@ let
         runHook postInstall
       '';
       nativeBuildInputs = [ pkgs.unzip ];
-      src = fetchurl ({
+      src = pkgs.fetchurl ({
         url = url;
       } // (convertHash checksum));
     };
