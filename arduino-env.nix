@@ -59,7 +59,7 @@ let
   uploadArduinoSketch = arduinoEnv: {
     arduinoSketch
     , fqbn
-  }: pkgs.writeScriptBin "upload-arduino-sketch" ''
+  }: pkgs.writeShellScriptBin "upload-arduino-sketch" ''
       ${arduinoEnv}/bin/arduino-cli upload --log --input-dir=${arduinoSketch} --fqbn=${fqbn} "$@"
   '';
 
